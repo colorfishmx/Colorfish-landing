@@ -11,5 +11,7 @@ export default {
 </script>
 
 <style lang="scss">
-  @import './scss/main.scss'
+  @import './scss/main.scss';
+  @import './scss/foundation.min.scss'
+
 </style>
