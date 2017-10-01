@@ -56,6 +56,7 @@ hr.one{
   display:block;
   border:0px;
   height:140px;
+  background-image:url('../../assets/separator2.png');
   background-repeat: no-repeat;
   background-position: center;
   margin:0px;
@@ -65,6 +66,7 @@ hr.two{
   display:block;
   border:0px;
   height:140px;
+  background-image:url('../../assets/separator.png');
   background-repeat: no-repeat;
   background-position: center;
   margin:0px;
