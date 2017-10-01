@@ -4,12 +4,12 @@
       path.cls-2(d='M0,25.39s213.5,91.5,529.08,15.16C953.25-62,1291,62.39,1291,62.39v51H0Z')
 
     section#features_section
-      .row.text-center.gradient-bg
-        .col-sm-8.col-sm-offset-2.text-center
+      .grid-x.text-center.gradient-bg
+        .cell.small-12.text-center
           h2.clrfsh_blue ¿Cómo funciona?
           p.clrfsh_blue
             | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut.
-      .container(v-for="item in items")
+      .grid-container(v-for="item in items")
         step(:title="item.title", :desc="item.desc", :img="item.img", :even="isEven=!isEven")
 </template>
 
@@ -66,5 +66,9 @@ p{
   color: ;
   font-size: 1.0em;
   font-weight: 400;
+}
+
+.text-center{
+  text-align: center;
 }
 </style>
