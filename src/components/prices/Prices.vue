@@ -5,12 +5,12 @@
 
     section#planes
       .grid-container
-        .row.margin-40
-          .col-sm-4
+        .grid-x.margin-40
+          .small-4.cell
             h2.white Planes
             p.white
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut.
-        .row.margin-50
+        .grid-x.margin-50
           plan(v-for="item in items",
               :key="item.id",
               :name="item.name",

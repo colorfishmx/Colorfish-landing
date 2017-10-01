@@ -1,5 +1,5 @@
 <template lang="pug">
-  .col-sm-4.pricing-container
+  .small-4.cell.pricing-container
     ul#profesional-bg.pricing-table
       div
         .headline

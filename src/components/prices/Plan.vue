@@ -1,5 +1,5 @@
 <template lang="pug">
-  .col-sm-4.pricing-container
+  .small-12.medium-4.cell.pricing-container
     br
     br
     ul.pricing-table.text-center(:style='{ background: `url(${startupImage})` }')
