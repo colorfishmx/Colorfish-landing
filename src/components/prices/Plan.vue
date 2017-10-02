@@ -2,38 +2,68 @@
   .small-12.medium-4.cell.pricing-container
     br
     br
-    ul.pricing-table.text-center(:style='{ background: `url(${startupImage})` }')
-      div(v-if='price.discount')
+    ul.pricing-table.text-center(:class="{active:isActive}" ,:style="{ backgroundImage: `url('${get_image}')` }")
+      div(v-if='plan.price.discount')
         .headline
-          h5 {{ name }}
-          span.strikethrough Antes ${{ price.regular }}MXN
+          h5 {{ plan.name }}
+          span.strikethrough Antes ${{ plan.price.regular }}MXN
         .price
           span
-            | Ahora ${{ price.discount }}
+            | Ahora ${{ plan.price.discount }}
             small MXN
       div(v-else)
         .headline
-          h5 {{ name }}
+          h5 {{ plan.name }}
         .price
           span
-            | ${{ price.regular }}
+            | ${{ plan.price.regular }}
             small MXN
-      li.info {{ info }}
-      li(v-for="feature in features") {{ feature }}
+      li.info {{ plan.quick_elevator_pitch }}
+      li(v-for="feature in plan.features") {{ feature }}
       li
-        button#startup-btn.contratar-btn(type='button', name='startup') contratar
+        button.contratar-btn(:class="get_btn_color", type='button', name='startup') contratar
 </template>
 
 <script>
-
 export default {
   name: 'plan',
-  props: ['name', 'info', 'price', 'features'],
+  props: ['plan'],
   data () {
     return {
-      startupImage: '../../assets/basic-bg.png',
-      startupStyles: {
-        background: 'url(../../assets/basic-bg.png)'
+    }
+  },
+  computed: {
+    isActive(){
+      if (this.plan.id == 3){
+        return true;
+      }
+      else if(this.plan.id == 2){
+        return false;
+      }
+      else{
+        return false;
+      }
+    },
+    get_image(){
+      if (this.plan.id == 3){
+        return require('../../assets/pro-bg.png');
+      }
+      else if(this.plan.id == 2){
+        return require('../../assets/pyme-bg.png');
+      }
+      else{
+        return require('../../assets/startup-bg.png');
+      }
+    },
+    get_btn_color(){
+      if (this.plan.id == 3){
+        return 'profesionalBtn';
+      }
+      else if(this.plan.id == 2){
+        return 'pymeBtn';
+      }
+      else{
+        return 'startupBtn';
       }
     }
   }
@@ -41,7 +71,31 @@ export default {
 </script>
 
 <!-- General styles -->
-<style scoped lang="postcss">
+<style scoped lang="scss">
+@import '../../scss/_variables.scss';
+
+.startupBtn{
+  color: $startup-color;
+}
+.startupBtn::after{
+  background: $startup-gradient;
+}
+
+.pymeBtn{
+  color: $pyme-color;
+}
+.pymeBtn::after{
+  background: $pyme-gradient;
+}
+
+.profesionalBtn{
+  color: #FFFFFF;
+  background: $profesional-gradient;
+}
+
+
+
+
 i{
   float: right;
 }
@@ -156,7 +210,7 @@ li:last-child {
   background: #FFFFFF;
   background-clip: padding-box;
   font-size: 20px;
-  font-weight: normal;
+  font-weight: 600;
   letter-spacing: 1px;
   padding: 16px 55px;
   border-radius: 40px;
@@ -165,10 +219,16 @@ li:last-child {
   border: 1px solid transparent;
 }
 
+@media (max-width: 768px){
+  .contratar-btn{
+    position:relative;
+  }
+}
+
 .contratar-btn::after{
   position: absolute;
-  top: -1px; bottom: -1px;
-  left: -1px; right: -1px;
+  top: -2px; bottom: -2px;
+  left: -2px; right: -2px;
   content: '';
   z-index: -1;
   border-radius: 40px;
@@ -199,33 +259,17 @@ li:last-child {
 
 
 
-#startup-bg{
-  background: url(../../assets/basic-bg.png);
-}
 
-.pricing-table.active {
-  box-shadow: 0px 0px 12px rgba(41,46,50,0.6);
+.active {
+  box-shadow: 0px 0px 100px rgba(41,46,50,0.5);
   position: absolute;
   margin: auto;
   z-index: 200;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
 }
 
 @media (max-width: 768px){
-  .pricing-table.active{
+  .active{
     position:relative;
   }
 }
-
-#startup-btn{
-  color: #9a86fd;
-}
-
-#startup-btn::after{
-  background: linear-gradient(120deg ,#55c2fa, #db4dff);
-}
-
 </style>

@@ -173,7 +173,7 @@ ul {
   background: linear-gradient(120deg, #FFC166, #FA867B);
   color: #FFFFFF;
   font-size: 20px;
-  font-weight: normal;
+  font-weight: 600;
   letter-spacing: 1px;
   padding: 16px 55px;
   border-radius: 40px;
