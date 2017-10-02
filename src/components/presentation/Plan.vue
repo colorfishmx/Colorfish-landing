@@ -4,7 +4,7 @@
       .grid-x.grid-margin-x
         //- .col-lg-6.col-lg-offset-0.col-md-6.col-md-offset-0.col-sm-10.col-sm-offset-1.col-xs-10.col-xs-offset-1.featureimage3.item1
         .cell.small-8.medium-6
-          img.Twox(src='../../assets/startup-illustration.png', width='100%', height='auto')
+          img(:src="get_image", width='70%', height='auto')
         //- .col-lg-5.col-lg-offset-1.col-md-5.col-md-offset-1.col-xs-10.col-xs-offset-1.item2
         .cell.small-12.medium-6
           h3(:class='get_color') plan {{ plan.name }}
@@ -57,6 +57,17 @@ export default {
       }
       else{
         return 'startupGradient';
+      }
+    },
+    get_image(){
+      if (this.plan.id == 3){
+        return require('../../assets/profesional-illustration.png');
+      }
+      else if(this.plan.id == 2){
+        return require('../../assets/pyme-illustration.png');
+      }
+      else{
+        return require('../../assets/startup-illustration.png');
       }
     }
   }
