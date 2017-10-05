@@ -90,7 +90,27 @@ export default {
 
 .profesionalBtn{
   color: #FFFFFF;
-  background: $profesional-gradient;
+  background: $profesional-gradient !important;
+
+  position: relative;
+  background-clip: padding-box;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 16px 55px;
+  border-radius: 40px;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+}
+
+.profesionalBtn::after{
+  position: relative;
+  top: 0px; bottom: 0px;
+  left: 0px; right: 0px;
+  content: inherit;
+  z-index: 0;
+  border-radius: 40px;
 }
 
 
