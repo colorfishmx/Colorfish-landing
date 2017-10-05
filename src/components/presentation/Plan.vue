@@ -12,10 +12,10 @@
           ul.top-three-features(v-for="advantage in plan.advantages")
             li
               p
-                svg(width='15px', height='11px', viewBox='0 0 15 11', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+                svg(width='15px', height='11px', class='checkmark', viewBox='0 0 15 11', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
                   defs
                   g#Page-1(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
-                    g#Homepage-v1-Copy(transform='translate(-793.000000, -2514.000000)', fill='#55C2FA')
+                    g#Homepage-v1-Copy(transform='translate(-793.000000, -2514.000000)', :class='get_color')
                       g#noun_535239_cc(transform='translate(213.000000, 2196.000000)')
                         g#Group
                           g#Group-51
@@ -80,6 +80,7 @@ export default {
 
   .startupColor{
     color: $startup-color;
+    fill: $startup-color;
   }
   .startupGradient{
     background: $startup-gradient;
@@ -87,6 +88,7 @@ export default {
 
   .pymeColor{
     color: $pyme-color;
+    fill: $pyme-color;
   }
   .pymeGradient{
     background: $pyme-gradient;
@@ -94,6 +96,7 @@ export default {
 
   .profesionalColor{
     color:  $profesional-color;
+    fill: $profesional-color;
   }
   .profesionalGradient{
     background: $profesional-gradient;
@@ -137,6 +140,10 @@ export default {
     font-size: 17px;
     line-height: 22px;
     font-weight: 400;
+  }
+
+  .checkmark{
+    margin-right: 20px;
   }
 
   .pad-sm{
