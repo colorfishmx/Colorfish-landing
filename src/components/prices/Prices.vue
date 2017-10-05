@@ -10,8 +10,9 @@
           p.white
             | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut.
       .grid-x.margin-50.grid-container
-        Plan(v-for='plan in plans', :plan='plan', :key='plan.id')
-        //- Plan(:plan='plans[0]', :key='plan.id')
+        Plan(:plan='plans[0]', :key='plans[0].id')
+        Plan(:plan='plans[2]', :key='plans[2].id')
+        Plan(:plan='plans[1]', :key='plans[1].id')
 </template>
 
 <script>
