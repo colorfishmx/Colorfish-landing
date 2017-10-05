@@ -11,21 +11,16 @@
             | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut.
       .grid-x.margin-50.grid-container
         Plan(v-for='plan in plans', :plan='plan', :key='plan.id')
-
-        PlanProfesional
         //- Plan(:plan='plans[0]', :key='plan.id')
 </template>
 
 <script>
-import PlanProfesional from './PlanProfesional'
-
 import Plan from './Plan'
 
 export default {
   name: 'prices',
   components: {
-    Plan,
-    PlanProfesional
+    Plan
   },
   computed: {
     plans(){

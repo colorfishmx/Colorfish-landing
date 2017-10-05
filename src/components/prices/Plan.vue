@@ -1,7 +1,7 @@
 <template lang="pug">
   .small-12.medium-4.cell.pricing-container
-    br
-    br
+    br(v-if='!isActive')
+    br(v-if='!isActive')
     ul.pricing-table.text-center(:class="{active:isActive}" ,:style="{ backgroundImage: `url('${get_image}')` }")
       div(v-if='plan.price.discount')
         .headline
@@ -158,9 +158,12 @@ ul {
   padding-right: 20px;
 }
 
-.headline h5{
-  color: #FFFFFF;
+.headline{
   padding: 10px;
+}
+
+h5{
+  color: #FFFFFF;
   font-family: 'nunito';
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -282,7 +285,7 @@ li:last-child {
 
 .active {
   box-shadow: 0px 0px 100px rgba(41,46,50,0.5);
-  position: absolute;
+  position: relative;
   margin: auto;
   z-index: 200;
 }

@@ -57,6 +57,7 @@ export const state = {
               `Dominio GRATIS por 2 años`,
               `5 correos electrónicos`,
               `Enlace a redes sociales`,
+              `Google Analytics`,
               `Host GRATIS por 2 años`,
               `Visible en todos los dispositivos`,
               `Hasta 9 secciones`,
