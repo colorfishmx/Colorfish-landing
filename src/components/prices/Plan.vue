@@ -239,6 +239,7 @@ li:last-child {
   border-radius: 40px;
   text-transform: uppercase;
   outline: none;
+  cursor: pointer;
   border: 1px solid transparent;
 }
 
