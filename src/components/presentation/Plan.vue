@@ -11,18 +11,17 @@
           h2 {{ plan.quick_desc }}
           ul.top-three-features(v-for="advantage in plan.advantages")
             li
-              p
-                svg(width='15px', height='11px', class='checkmark', viewBox='0 0 15 11', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
-                  defs
-                  g#Page-1(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
-                    g#Homepage-v1-Copy(transform='translate(-793.000000, -2514.000000)', :class='get_color')
-                      g#noun_535239_cc(transform='translate(213.000000, 2196.000000)')
-                        g#Group
-                          g#Group-51
-                            g#Group-57
-                              g#Group-56(transform='translate(580.000000, 0.000000)')
-                                path#Shape(d='M0.409363118,322.461644 L0.409363118,322.461644 C0.971720532,321.899287 1.86487643,321.899287 2.42723384,322.445105 L5.4375,325.455371 L12.4835076,318.409363 C13.0293251,317.863546 13.9390209,317.863546 14.4848384,318.409363 L14.4848384,318.409363 C15.0306559,318.955181 15.0306559,319.864876 14.4848384,320.410694 L6.41335551,328.465637 C5.86753802,329.011454 4.95784221,329.011454 4.41202471,328.465637 L0.409363118,324.462975 C-0.136454373,323.900618 -0.136454373,323.007462 0.409363118,322.461644 L0.409363118,322.461644 Z')
-                span {{ advantage }}
+              svg(width='15px', height='11px', class='checkmark', viewBox='0 0 15 11', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+                defs
+                g#Page-1(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+                  g#Homepage-v1-Copy(transform='translate(-793.000000, -2514.000000)', :class='get_color')
+                    g#noun_535239_cc(transform='translate(213.000000, 2196.000000)')
+                      g#Group
+                        g#Group-51
+                          g#Group-57
+                            g#Group-56(transform='translate(580.000000, 0.000000)')
+                              path#Shape(d='M0.409363118,322.461644 L0.409363118,322.461644 C0.971720532,321.899287 1.86487643,321.899287 2.42723384,322.445105 L5.4375,325.455371 L12.4835076,318.409363 C13.0293251,317.863546 13.9390209,317.863546 14.4848384,318.409363 L14.4848384,318.409363 C15.0306559,318.955181 15.0306559,319.864876 14.4848384,320.410694 L6.41335551,328.465637 C5.86753802,329.011454 4.95784221,329.011454 4.41202471,328.465637 L0.409363118,324.462975 C-0.136454373,323.900618 -0.136454373,323.007462 0.409363118,322.461644 L0.409363118,322.461644 Z')
+              p {{ advantage }}
           .pad-sm.grid-x
             a.cell.small-12.medium-6.btn-aside(href='#', :class='get_color') ver ejemplos
             a.cell.small-12.medium-6.btn-primary.sunny.scroll(href='#planes', :class='get_gradient') Ver precio
@@ -140,10 +139,14 @@ export default {
     font-size: 17px;
     line-height: 22px;
     font-weight: 400;
+    display: block;
+    overflow: hidden;
   }
 
   .checkmark{
     margin-right: 20px;
+    margin-top: 5px;
+    float: left;
   }
 
   .pad-sm{
